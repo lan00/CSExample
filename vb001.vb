@@ -24,3 +24,26 @@ End Module
         i.GetType()
 
     End Sub
+
+#Region "TestNative"
+
+    Sub TestNative()
+        ' test native method, manage => native
+        ' 17.10.18
+        Dim pt As System.Drawing.Point = New Drawing.Point()
+        GetCursorPos(pt)
+        Console.WriteLine("x:{0} , y:{1} ", pt.X, pt.Y)
+        GetCursorPos(pt)
+        Console.WriteLine("x:{0} , y:{1} ", pt.X, pt.Y)
+        GetCursorPos(pt)
+        Console.WriteLine("x:{0} , y:{1} ", pt.X, pt.Y)
+        GetCursorPos(pt)
+        Console.WriteLine("x:{0} , y:{1} ", pt.X, pt.Y)
+    End Sub
+
+    Friend Function _GetCursorPos(ByRef pt As System.Drawing.Point) As Boolean
+        Return GetCursorPos(pt)
+    End Function
+
+    Friend Declare Function GetCursorPos Lib "user32" Alias "GetCursorPos" (ByRef pt As System.Drawing.Point) As Boolean
+#End Region
