@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- greedy snack 170914 -->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>tan shi</title>
+    <!--<script src=".\jquery-3.2.1.js"></script>-->
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        var b = document.createElement('button')
+        b.textContent='button'
+        document.body.appendChild(b)
+
+        var eleNumber = 100
+        var eleType='div'
+        var eleName='button'
+        for (var i = 0; i < eleNumber; i++) {
+            b = document.createElement(eleType)
+            b.id = eleName + i;
+            b.textContent = eleName + i;
+            document.body.appendChild(b)
+
+            
+            var x = Math.random()*1000
+            var y = Math.random()*1000
+            
+            $('#' + b.id).css({ "color": "red","position":"absolute","left":x,"top":y })
+        }
+    </script>
+
+    <table >
+        <tbody>
+            <tr><td></td></tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
