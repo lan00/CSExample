@@ -1,0 +1,94 @@
+@echo off
+rem @chcp 65001
+rem  debug
+
+rem copy set_taskbar_not_combine.cmd
+rem start  "\\ShareFile11\d$\Users\v-shacui\Desktop\test\set_taskbar_not_combine.cmd"  rem  error ,can't exe
+
+rem call .lnk
+rem copy ,then call
+copy "\\ShareFile\temp\v-shacui\test\dbg_file\qi ta\set_taskbar_not_combine.cmd" "1 set_taskbar_not_combine.cmd" /y
+
+rem start /wait cmd /c "1 set_taskbar_not_combine.cmd"
+start /wait cmd /c "\\ShareFile\temp\v-shacui\test\dbg_file\set_taskbar_not_combine.cmd"
+rem start cmd /c "\\ShareFile\temp\v-shacui\test\dbg_file\qi ta\OpenMyselfFolder.cmd"
+
+
+
+rem copy vs settinngs
+copy "\\ShareFile\temp\v-shacui\test\dbg_file\qi ta\copy setting.cmd" "4  copy setting.cmd" /y
+start /wait cmd /c "1 copy setting.cmd"
+
+--------------------
+
+rem copy folder dbg_file 
+rem copy "\\ShareFile\temp\v-shacui\test\dbg_file\qi ta\1   dbg_file.lnk" "1   dbg_file.lnk"
+rem start /wait "cmd" "1   dbg_file.lnk"
+start %USERPROFILE%\downloads
+timeout 4
+
+rem open %school
+start %wor%
+
+rem copy file 
+rem  copy "\\ShareFile\temp\v-shacui\test\dbg_file\1  copy result xml  debug .bat" "1  copy result xml  debug .bat"
+rem copy "\\ShareFile\temp\v-shacui\test\dbg_file\1  copy result xml  debug.bat - Shortcut.lnk"  "1  copy result xml  debug.bat - Shortcut.lnk"
+
+copy "\\ShareFile\temp\v-shacui\test\dbg_file\Common use.vb"  "Common use.vb" /y
+copy "\\ShareFile\temp\v-shacui\test\dbg_file\qi ta\Exported Newest.vssettings"  /y
+
+copy \\ShareFile\temp\v-shacui\test\dbg_file\dbg\* /y
+
+goto afterComment
+=========CommentBegin=====================
+rem copy set_taskbar_not_combine.cmd
+rem start  "\\ShareFile11\d$\Users\v-shacui\Desktop\test\set_taskbar_not_combine.cmd"  rem  error ,can't exe
+copy "\\ShareFile11\d$\Users\v-shacui\Desktop\test\set_taskbar_not_combine.cmd" "1 set_taskbar_not_combine.cmd" /y
+start /wait cmd /c "1 set_taskbar_not_combine.cmd"
+
+rem copy vs settinngs
+rem USERPROFILE=D:\Users\FWTLABB
+set vsDir=Visual Studio 2017
+set vsset=%userprofile%\documents\%vsDir%\settings\CurrentSettings.vssettings
+move "%vsset%" "%vsset%.bak"
+copy  "\\ShareFile\temp\v-shacui\test\dbg_file\Exported-2016-12-12 1.62 sym.vssettings" "%vsset%" /y
+rem don't copy. start explorer.exe /e,  "%userprofile%\documents\%vsDir%\settings"
+
+rem move to a .cmd
+rem copy vs settinngs
+rem USERPROFILE=D:\Users\FWTLABB
+set vsDir=Visual Studio 2017
+set vsset=%userprofile%\documents\%vsDir%\settings\CurrentSettings.vssettings
+move "%vsset%" "%vsset%.bak"
+copy  "\\ShareFile\temp\v-shacui\test\dbg_file\Exported-2016-12-12 1.62 sym.vssettings" "%vsset%" /y
+rem don't copy. start explorer.exe /e,  "%userprofile%\documents\%vsDir%\settings"
+
+
+
+echo  copy vs2015 setting file
+copy  "C:\Users\fwtlaba\Documents\Visual Studio 2015\Settings\CurrentSettings.vssettings"  "C:\Users\fwtlaba\Documents\Visual Studio 2015\Settings\CurrentSettings o.vssettings"
+copy  "\\ShareFile11\d$\Users\v-shacui\Documents\CurrentSettings debug 1.1.vssettings" "C:\Users\fwtlaba\Documents\Visual Studio 2015\Settings\CurrentSettings.vssettings"
+rem start "cmd" "C:\Users\fwtlaba\Documents\Visual Studio 2015\Settings"
+
+
+
+
+rem echo "\\ShareFile11\d$\Users\v-shacui\Desktop\test\aa.cmd"  > "1  copy result xml  2.bat"
+rem call start "1  copy result xml  2.bat"
+rem error,start a empty cmd
+copy "\\ShareFile11\d$\Users\v-shacui\Desktop\test\1  copy result xml  .bat - Shortcut.lnk"  "1 copy result xml  .bat - Shortcut.lnk"
+rem call by lnk, access forbid
+
+
+rem  copy nuget file
+rename NugetBaseTestCase.vb NugetBaseTestCaseOOO.vb
+copy  "\\ShareFile11\d$\Users\v-shacui\Desktop\test\project\NugetBaseTestCase_debug.vb"  "NugetBaseTestCase.vb" /y
+
+rem p /wait
+start /wait cmd /c pause
+echo aa
+=========CommentEnd=====================
+:afterComment
+
+
+timeout 10
