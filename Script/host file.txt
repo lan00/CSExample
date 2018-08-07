@@ -1,0 +1,4 @@
+notepad "%SystemDrive%\Windows\System32\drivers\etc\hosts"
+
+#block ad
+127.0.0.1  pos.baidu.com
