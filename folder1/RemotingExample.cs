@@ -15,7 +15,7 @@ namespace RemoteClient
             //Console.ReadLine();
         }
     }
-}
+}  // =============== RemoteClient ==================
 
 <configuration>
   <appSettings>
@@ -23,7 +23,7 @@ namespace RemoteClient
   </appSettings>
 </configuration>
 
-========== RemoteObject ==========
+// =============== RemoteObject ==================
 using System;
 
 namespace RemoteObject
@@ -37,7 +37,7 @@ namespace RemoteObject
     }
 }
 
-=============== RemoteServer ==================
+// =============== RemoteServer ==================
 using System;
 using System.Runtime.Remoting;
 
@@ -49,7 +49,7 @@ namespace RemoteServer
         static void Main(string[] args)
         {
             //RemotingConfiguration.Configure("RemoteServer.exe.config");  obsolete
-            RemotingConfiguration.Configure("RemoteServer.exe.config", true);
+            RemotingConfiguration.Configure("RemoteServer.exe.config", false);  //security is true, fail
 
             Console.ReadLine();
         }
@@ -70,4 +70,4 @@ namespace RemoteServer
      </system.runtime.remoting>
  </configuration>
 
-from https://www.cnblogs.com/zhangzhu/articles/2495010.html
+// from https://www.cnblogs.com/zhangzhu/articles/2495010.html
