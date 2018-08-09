@@ -11,3 +11,14 @@ timeout %timeoutDelay%
 start %pro%
 
 timeout %timeoutA%
+
+rem ====== modify environment variable ======
+rem ====== 修改环境变量 ====== 
+wmic ENVIRONMENT where "name='path' " 
+wmic ENVIRONMENT where "name='path' and username='<SYSTEM>'" set VariableValue='%path%;C:\'
+wmic ENVIRONMENT where "name='path' " 
+
+
+
+
+
