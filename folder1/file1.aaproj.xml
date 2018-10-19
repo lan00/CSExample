@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Binaries Include="*.dll;*.exe"/>
+  </ItemGroup>
+  
+  <Target Name="DisplayMessages">
+    <Message Text="Project File Name = $(MSBuildProjectFile)" />
+    <Message Text="Project Extension = $(MSBuildProjectExtension)" />
+
+    <Warning
+        Text=" The 0 property was not set on the command line."
+        Condition="'$(0)' == ''" />
+    <Warning
+        Text=" The FREEBUILD property was not set on the command line."
+        Condition="'$(FREEBUILD)' == ''" />
+    <Error Text="error example" ContinueOnError="true"></Error>
+    <!--repeat
+    <Warning
+       Text=" The 0 property was not set on the command line."
+       />
+    <Warning
+        Text=" The FREEBUILD property was not set on the command line."
+        Condition="'$(FREEBUILD)' == ''" />-->
+
+    <GetFrameworkPath>
+      <Output
+          TaskParameter="Path"
+          PropertyName="FrameworkPath" />
+    </GetFrameworkPath>
+    <Message Text="$(FrameworkPath)" />
+
+
+
+      <!-- set security on binaries-->
+      <Exec Command="echo y| cacls %(Binaries.Identity) /G everyone:R" ContinueOnError="true"/>
+
+    <ReadLinesFromFile
+       File="@(MyTextFile)" >
+      <Output
+          TaskParameter="Lines"
+          ItemName="ItemsFromFile" 
+         />
+      <!--PropertyName="LinesN"-->
+    </ReadLinesFromFile>
+    <Message Text="$(ItemsFromFile)" />
+
+  </Target>
+    
+
+    
+  <Target Name="GetPath">
+    
+  </Target>
+
+
+
+  <ItemGroup>
+    <MyTextFile Include="Items.txt"/>
+  </ItemGroup>
+
+   
+    <!--...-->
+
+  <Target Name="ValidateCommandLine">
+    <Warning
+        Text=" The 0 property was not set on the command line."
+        Condition="'$(0)' == ''" />
+    <Warning
+        Text=" The FREEBUILD property was not set on the command line."
+        Condition="'$(FREEBUILD)' == ''" />
+
+    <Warning
+       Text=" The 0 property was not set on the command line."
+       />
+    <Warning
+        Text=" The FREEBUILD property was not set on the command line."
+        Condition="'$(FREEBUILD)' == ''" />
+  </Target>
+</Project>
+
+<!--<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="ValidateCommandLine">
+    <Warning
+        Text=" The 0 property was not set on the command line."
+        Condition="'$(0)' == ''" />
+    <Warning
+        Text=" The FREEBUILD property was not set on the command line."
+        Condition="'$(FREEBUILD)' == ''" />
+  </Target>
+</Project>-->
