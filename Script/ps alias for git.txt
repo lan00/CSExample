@@ -1,0 +1,9 @@
+# Alias File
+# Exported by : v-shacui
+# Date/Time : Thursday, February 21, 2019 7:03:53 PM
+# Computer : devin22222
+"d","dir","","None"
+"g","git","","None"
+"wh","Write-Host","","None"
+
+#Import-Alias "E:\Users\v-shacui\Downloads\ps alias.txt"
